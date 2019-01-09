@@ -30,12 +30,12 @@ tar -xzvf QCA9377.tar.gz
 rm -f QCA9377.tar.gz
 ```
 
-# Reload the driver
+## Reload the driver
 
-# in one terminal watch dmesg output
+## in one terminal watch dmesg output
 dmesg -w | grep ath10k_pci
 
-# in another terminal reload the driver
+## in another terminal reload the driver
 
 rmmod ath10k_pci
 modprobe -v ath10k_pci
