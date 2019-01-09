@@ -23,14 +23,19 @@ cp /lib/firmware/QCA9377/hw1.0/WLAN.TF.2.1/firmware-6.bin_WLAN.TF.2.1-00021-QCAR
 
 ## you can just download my prepackaged version of the QCA9377 directory and copy it to /lib/firmware/ath10k/
 ```bash
-wget 
+mkdir /lib/firmware/ath10k
+cd /lib/firmware/ath10k
+wget https://github.com/charlmert/qca9377/raw/master/QCA9377.tar.gz
+tar -xzvf QCA9377.tar.gz
+rm -f QCA9377.tar.gz
 ```
 
-# In one terminal watch dmesg output
+# Reload the driver
+
+# in one terminal watch dmesg output
 dmesg -w | grep ath10k_pci
 
-# In another terminal reload the driver
+# in another terminal reload the driver
 
 rmmod ath10k_pci
 modprobe -v ath10k_pci
-
